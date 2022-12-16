@@ -1,0 +1,18 @@
+.header {
+    margin: 0 2rem;
+    padding: .5rem 0;
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+a > span{
+    margin: 0 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: white;
+}
+
+a > span:hover {
+    color: red;
+}

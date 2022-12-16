@@ -1,0 +1,55 @@
+.movie__list {
+    padding: 0 3rem 3rem 3rem;
+}
+
+.list__title {
+	font-size: 1.75rem;
+	margin:  1rem;
+}
+
+.list__cards {
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: center;
+}
+
+.button__block{
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 30px;
+}
+
+.button__next{
+	position: absolute;
+	left: 71%;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem 3rem;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: white;
+    border: 1px solid transparent;
+    background-color: #2f3640;
+    border-radius: 5rem;
+}
+
+.button__prev{
+	position: absolute;
+	left: 19%;
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0.5rem 3rem;
+    line-height: 1;
+    font-weight: 500;
+    font-size: 1.3rem;
+    width: auto;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    color: white;
+    border: 1px solid transparent;
+    background-color: #2f3640;
+    border-radius: 5rem;
+}
