@@ -20,7 +20,6 @@ const Search = () => {
 					))
 				}
 			</div>
-			
 		</div>
 	);
 };

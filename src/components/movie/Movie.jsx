@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./Movie.css"
+import "./Movie.css";
 import { useParams } from "react-router-dom";
 
 const Movie = () => {
@@ -7,7 +7,7 @@ const Movie = () => {
 	const { id } = useParams();
 
 	useEffect(() => {
-		getData()
+		getData();
 		window.scrollTo(0, 0);
 	}, []);
 
@@ -20,24 +20,24 @@ const Movie = () => {
 	return (
 		<div className="movie">
 			<div className="movie__intro">
-				<img className="movie__backdrop" src={`https://image.tmdb.org/t/p/original${currentMovieDetail ? currentMovieDetail.backdrop_path : ""}`} />
+				<img className="movie__backdrop" alt="" src={`https://image.tmdb.org/t/p/original${currentMovieDetail ? currentMovieDetail.backdrop_path : ""}`} />
 			</div>
 			<div className="movie__detail">
-				<div className="movie__detailLeft">
-					<div className="movie__posterBox">
-						<img className="movie__poster" src={`https://image.tmdb.org/t/p/original${currentMovieDetail ? currentMovieDetail.poster_path : ""}`} />
+				<div className="movie__detail-left">
+					<div className="movie__poster-box">?
+						<img className="movie__poster" alt="" src={`https://image.tmdb.org/t/p/original${currentMovieDetail ? currentMovieDetail.poster_path : ""}`} />
 					</div>
 				</div>
-				<div className="movie__detailRight">
-					<div className="movie__detailRightTop">
+				<div className="movie__detail-right">
+					<div className="movie__detail-right-top">
 						<div className="movie__name">{currentMovieDetail ? currentMovieDetail.original_title : ""}</div>
 						<div className="movie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
 						<div className="movie__rating">
 							{currentMovieDetail ? currentMovieDetail.vote_average : ""} <i class="fas fa-star" />
-							<span className="movie__voteCount">{currentMovieDetail ? "(" + currentMovieDetail.vote_count + ") votes" : ""}</span>
+							<span className="movie__vote-count">{currentMovieDetail ? "(" + currentMovieDetail.vote_count + ") votes" : ""}</span>
 						</div>
 						<div className="movie__runtime">{currentMovieDetail ? currentMovieDetail.runtime + " mins" : ""}</div>
-						<div className="movie__releaseDate">{currentMovieDetail ? "Release date: " + currentMovieDetail.release_date : ""}</div>
+						<div className="movie__release-date">{currentMovieDetail ? "Release date: " + currentMovieDetail.release_date : ""}</div>
 						<div className="movie__genres">
 							{
 								currentMovieDetail && currentMovieDetail.genres
@@ -50,9 +50,9 @@ const Movie = () => {
 							}
 						</div>
 					</div>
-					<div className="movie__detailRightBottom">
-						<div className="synopsisText">Synopsis</div>
-						<div>{currentMovieDetail ? currentMovieDetail.overview : ""}</div>
+					<div className="movie__detail-right-bottom">
+						<div className="synopsis-text">Synopsis</div>
+						<div>{currentMovieDetail ? currentMovieDetail.overview : "Not synopsis"}</div>
 					</div>
 				</div>
 			</div>
