@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Movie.css";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Movie = () => {
 	const [currentMovieDetail, setMovie] = useState();
@@ -51,8 +51,11 @@ const Movie = () => {
 						</div>
 					</div>
 					<div className="movie__detail-right-bottom">
-						<div className="synopsis-text">Synopsis</div>
+						<p className="synopsis-text">Synopsis</p>
 						<div>{currentMovieDetail ? currentMovieDetail.overview : "Not synopsis"}</div>
+					</div>
+					<div className="btn__box">
+						<Link to='/'><button className="btn__back">Back</button></Link>
 					</div>
 				</div>
 			</div>
