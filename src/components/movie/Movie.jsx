@@ -24,7 +24,7 @@ const Movie = () => {
 			</div>
 			<div className="movie__detail">
 				<div className="movie__detail-left">
-					<div className="movie__poster-box">?
+					<div className="movie__poster-box">
 						<img className="movie__poster" alt="" src={`https://image.tmdb.org/t/p/original${currentMovieDetail ? currentMovieDetail.poster_path : ""}`} />
 					</div>
 				</div>
