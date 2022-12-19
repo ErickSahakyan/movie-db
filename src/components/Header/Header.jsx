@@ -18,6 +18,9 @@ const Header = () => {
 			<Link to="/movies/top_rated" style={{ textDecoration: 'none', color: 'white' }}>
 				<span>Top Rated</span>
 			</Link>
+			<Link to="/movies/favorite" style={{ textDecoration: 'none', color: 'white' }}>
+				<span>Favorite</span>
+			</Link>
 			<SearchBox />
 		</div>
 	);

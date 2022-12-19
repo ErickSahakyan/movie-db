@@ -7,7 +7,7 @@ import './SearchBox.css';
 
 const SearchBox = () => {
 	const dispatch = useDispatch();
-	const searchValue = useSelector(state => state.searchValue);
+	const searchValue = useSelector(state => state.value.searchValue);
 
 	const onChangeValue = (searchValue) => {
 		dispatch({

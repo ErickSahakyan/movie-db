@@ -10,6 +10,7 @@ import Upcoming from "./components/Upcoming/Upcoming";
 import TopRated from "./components/TopRated/TopRated";
 import Movie from "./components/movie/Movie";
 import Search from "./components/Search/Search";
+import Favorite from "./components/Favorite/Favorite";
 
 
 
@@ -26,10 +27,12 @@ function App() {
 					<Route path='/movies/top_rated' element={<TopRated />} />
 					<Route path='/movies/search' element={searchValue === '' ? '' : <Search />}></Route>
 					<Route path='movies/search/movie/:id' element={<Movie />}></Route>
+					<Route path='movies/favorite/movie/:id' element={<Movie />}></Route>
 					<Route path='movies/upcoming/movie/:id' element={<Movie />}></Route>
 					<Route path='movies/popular/movie/:id' element={<Movie />}></Route>
 					<Route path='movies/top_rated/movie/:id' element={<Movie />}></Route>
 					<Route path='movie/:id' element={<Movie />}></Route>
+					<Route path='/movies/favorite' element={<Favorite />}></Route>
 				</Routes>
 			</Router>
 		</div>

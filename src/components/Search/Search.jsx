@@ -7,7 +7,7 @@ import { SearchMovie } from './../../API/SearchMovie';
 
 
 const Search = () => {
-	const searchValue = useSelector(state => state.searchValue);
+	const searchValue = useSelector(state => state.value.searchValue);
 	const { searchMovie } = SearchMovie(searchValue);
 
 	return (
@@ -15,7 +15,7 @@ const Search = () => {
 			<h2 className="list__title">SEARCH</h2>
 			<div className="list__cards">
 				{
-					searchMovie.map(movie => (
+					searchMovie && searchMovie.map(movie => (
 						<Card movie={movie} />
 					))
 				}

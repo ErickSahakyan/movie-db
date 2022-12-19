@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Movie.css";
 import { Link, useParams } from "react-router-dom";
+import { useDispatch} from "react-redux";
 
 const Movie = () => {
 	const [currentMovieDetail, setMovie] = useState();
@@ -15,6 +16,22 @@ const Movie = () => {
 		fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`)
 			.then(res => res.json())
 			.then(data => setMovie(data));
+	};
+
+	const dispatch = useDispatch();
+
+	const addFavoriteMovies = (currentMovieDetail) => {
+		dispatch({
+			type: 'ADD_FAVORITE',
+			payload: currentMovieDetail,
+		});
+	};
+
+	const removeFavoriteMovie = (currentMovieDetail) => {
+		dispatch({
+			type: 'REMOVE_FAVORITE',
+			payload: currentMovieDetail,
+		});
 	};
 
 	return (
@@ -54,8 +71,19 @@ const Movie = () => {
 						<p className="synopsis-text">Synopsis</p>
 						<div>{currentMovieDetail ? currentMovieDetail.overview : "Not synopsis"}</div>
 					</div>
+					<div>
+						
+					</div>
 					<div className="btn__box">
 						<Link to='/'><button className="btn__back">Back</button></Link>
+						<button onClick={() => {
+							addFavoriteMovies(currentMovieDetail);
+							alert('This movie has been added');
+						}} className="btn__favorite">Add Favorite</button>
+						<button onClick={() => {
+							removeFavoriteMovie(currentMovieDetail);
+							alert('This movie has been deleted');
+						}} className="btn__remove">Remove Film</button>
 					</div>
 				</div>
 			</div>
